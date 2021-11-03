@@ -4,15 +4,16 @@
 //
 //  Created by Student on 10/26/21.
 //
+//
+//
 
 import SwiftUI
 
 struct ContentView: View {
     @State private var moves = Array (repeating: "", count: 9)
-    @State private var xTurn = true
+    @State private var xturn = true
     @State private var gameOver = false
     @State private var winMessage = ""
-    
     var body: some View {
         VStack {
             Text("Tic Tac Toe")
@@ -48,8 +49,8 @@ struct ContentView: View {
                     .onTapGesture {
                         withAnimation(Animation.default) {
                             if moves[index] == "" {
-                                moves[index] = xTurn ? "X" : "O"
-                                xTurn.toggle()
+                                moves[index] = xturn ? "X" : "O"
+                                xturn.toggle()
                             }
                         }
                     }
